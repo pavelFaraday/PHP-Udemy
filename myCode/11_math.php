@@ -11,6 +11,7 @@
 <body>
     <h1>
         <?php
+        // Simple Math Operations
         echo 56 * 43;
         echo '<br>';
         echo 80 / 4;
@@ -18,7 +19,6 @@
         echo 80 + 4;
         echo '<br>';
         echo 80 - 4;
-
         echo '<br>';
         echo '<br>';
 
@@ -34,10 +34,7 @@
         $num1 = 10;
         $num2 = 5;
         $num3 = 3;
-
         echo $num1 + $num2 * $num3; // 25
-
-
         ?>
     </h1>
 </body>
