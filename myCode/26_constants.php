@@ -15,15 +15,36 @@
     $x = 'Hello';
     echo $x . '<br>'; // Hello
 
-    /* -------------------------------- constants ------------------------------- */
+    /* -------------------- Method 1 - define constants -------------------- */
 
     // define CONSTANT
     define('AGE', 35);
     echo AGE; // 35
 
+    echo '<br>';
+
     // AGE = 1; // ERROR
     // define('AGE', 35); // We cannot redefine constant ! it will be the same as first 
     echo AGE;
+    echo '<br>';
+
+    /* -------------------- Method 2 - use const keyword -------------------- */
+
+    const GENDER = 'male';
+    echo GENDER;
+
+    echo '<br>';
+
+    /* ----------------------------- CONSTANT arrays ---------------------------- */
+
+    const ANIMALS = ['dog', 'cat', 'bird'];
+    echo ANIMALS[1];
+
+    echo '<br>';
+
+    define('ANIMALS2', array('hoarse', 'monkey', 'rabbit'));
+    echo ANIMALS[2]; // rabbit
+
     ?>
 
 </body>
