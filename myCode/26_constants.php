@@ -43,7 +43,7 @@
     echo '<br>';
 
     define('ANIMALS2', array('hoarse', 'monkey', 'rabbit'));
-    echo ANIMALS[2]; // rabbit
+    echo ANIMALS2[2]; // rabbit
 
     ?>
 
