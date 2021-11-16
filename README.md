@@ -18,3 +18,6 @@ PHP Udemy Course - [PHP for Beginners - Become a PHP Master - CMS Project](https
 [tutorialspoint.com | PHP - GET & POST Methods | $\_REQUEST variable](https://www.tutorialspoint.com/php/php_get_post.htm)
 
 `isset()`, `unset()` - The isset() function is an inbuilt function in PHP which checks whether a variable is set (not empty) and is not NULL. This function also checks if a declared variable, array or array key has null value, if it does, isset() returns false, it returns true in all other possible cases. Determine if a variable is considered set, this means if a variable is declared and is different than null. If a variable has been unset with the unset() function, it is no longer considered to be set.
+
+`in_array(needle, array)` - Returns true if needle is found in the array, false otherwise. [see example](https://www.php.net/manual/en/function.in-array.php).
+`needle` - The searched value.
