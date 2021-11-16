@@ -14,3 +14,5 @@ PHP Udemy Course - [PHP for Beginners - Become a PHP Master - CMS Project](https
 [PHP Manual | String Functions](https://www.php.net/manual/en/ref.strings.php)
 
 [PHP Manual | Array Functions](https://www.php.net/manual/en/ref.array.php)
+
+[tutorialspoint.com | PHP - GET & POST Methods | $\_REQUEST variable](https://www.tutorialspoint.com/php/php_get_post.htm)
