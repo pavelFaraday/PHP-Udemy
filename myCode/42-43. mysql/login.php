@@ -3,7 +3,26 @@
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    echo $username . '<br>' . $password;
+
+    // 1. server name - 'localhost'
+    // 2. username - 'root'
+    // 3. password - 'root' (MAMP) || '' (XAMPP)
+    // 4. Database - 'loginapp'
+    $connection = mysqli_connect('localhost', 'root', 'root', 'loginapp');
+
+    if ($connection) {
+        echo 'You are connected!' . '<br>';
+    } else {
+        die('Something went wrong in connection!' . '<br>');
+    }
+
+    /* 
+    if ($username && $password) {
+        echo $username . '<br>' . $password;
+    } else {
+        echo 'Please, Enter username & password!';
+    } 
+    */
 }
 
 ?>
@@ -17,7 +36,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>42-43. Login | PHP Udemy</title>
+    <title>42-44. Connecting to DB | PHP Udemy</title>
 </head>
 
 <body>
