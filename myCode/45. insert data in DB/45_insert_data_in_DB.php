@@ -4,10 +4,17 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // 1. server name - 'localhost'
-    // 2. username - 'root'
-    // 3. password - 'root' (MAMP) || '' (XAMPP)
-    // 4. Database - 'loginapp'
+    /* -------------------------------------------------------------------------- */
+    /*                            1. Connection with DB                           */
+    /* -------------------------------------------------------------------------- */
+
+    /*  
+    1. server name - 'localhost'
+    2. username - 'root'
+    3. password - 'root' (MAMP) || '' (XAMPP)
+    4. Database - 'loginapp' 
+    */
+
     $connection = mysqli_connect('localhost', 'root', 'root', 'loginapp');
 
     if ($connection) {
@@ -16,11 +23,28 @@ if (isset($_POST['submit'])) {
         die('Something went wrong in connection!' . '<br>');
     }
 
+    /* -------------------------------------------------------------------------- */
+    /*                             2. Save Data in DB                             */
+    /* -------------------------------------------------------------------------- */
 
-    if ($username && $password) {
-        echo $username . '<br>' . $password;
+    /*
+    users - table in DB (loginapp)
+    username, password - Those columns in the database, where we want the data to be saved
+    "$username", "$password" - Those Data, that we want to save in DB 
+
+    $query = "INSERT INTO users(username, password) VALUES ('$username', '$password')";
+
+    mysqli_query($connection, $query) --- mysqli_query() function performs a query against a database.
+    */
+
+    $query = "INSERT INTO users(username, password) ";
+    $query .= "VALUES ('$username', '$password')";
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+        die('Query Failed!' . mysqli_error($connection));
     } else {
-        echo 'Please, Enter username & password!';
+        echo 'Data is Saved';
     }
 }
 
@@ -35,13 +59,13 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>42-44. Connecting to DB | PHP Udemy</title>
+    <title>45. insert data in DB | PHP Udemy</title>
 </head>
 
 <body>
     <div class="container">
         <div class="col-sm-4 mx-auto mt-4">
-            <form action="login.php" method="post">
+            <form action="45_insert_data_in_DB.php" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" name="username" class="form-control">
