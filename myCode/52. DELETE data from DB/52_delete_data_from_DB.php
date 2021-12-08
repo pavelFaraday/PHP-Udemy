@@ -3,8 +3,8 @@
 include "connection_DB.php";
 include "functions.php";
 
-if (isset($_POST['submit'])) {
-    updateData();
+if (isset($_POST['delete'])) {
+    deleteData();
 }
 
 ?>
@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>47-50. UPDATE data in DB | PHP Udemy</title>
+    <title>52. DELETE data from DB | PHP Udemy</title>
 </head>
 
 <body>
@@ -27,15 +27,7 @@ if (isset($_POST['submit'])) {
 
     <div class="container">
         <div class="col-sm-6 mx-auto mt-4">
-            <form action="47_50_update_data_in_DB.php" method="post">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control">
-                </div>
+            <form action="52_delete_data_from_DB.php" method="post">
                 <div class="form-group">
                     <select name="id" id="">
                         <?php
@@ -44,7 +36,7 @@ if (isset($_POST['submit'])) {
                     </select>
                 </div>
                 <div class="form-group mt-2">
-                    <input class="btn btn-primary" type="submit" name="submit" value="UPDATE">
+                    <input class="btn btn-primary" type="submit" name="delete" value="DELETE">
                 </div>
             </form>
         </div>
