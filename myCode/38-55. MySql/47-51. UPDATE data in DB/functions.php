@@ -2,6 +2,7 @@
 
 include "connection_DB.php";
 
+//  for showing current 'id' we want to delete from DB. it will be showen is form - 'select' option
 function showAllData()
 {
     global $connection;
