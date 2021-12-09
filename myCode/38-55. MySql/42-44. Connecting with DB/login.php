@@ -41,6 +41,7 @@ if (isset($_POST['submit'])) {
 <body>
     <div class="container">
         <div class="col-sm-4 mx-auto mt-4">
+            <h4>CRUD - Connection to DB</h4>
             <form action="login.php" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
