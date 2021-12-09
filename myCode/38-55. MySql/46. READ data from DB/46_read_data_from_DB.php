@@ -1,32 +1,17 @@
 <?php
 
+
+
 if (isset($_POST['submit'])) {
+    include "connection.php";
+
+
     /* -------------------------------------------------------------------------- */
-    /*                            1. Connection with DB                           */
+    /*                              READ Data from DB                             */
     /* -------------------------------------------------------------------------- */
-
-    /*  
-    1. server name - 'localhost'
-    2. username - 'root'
-    3. password - 'root' (MAMP) || '' (XAMPP)
-    4. Database - 'loginapp' 
-    */
-
-    $connection = mysqli_connect('localhost', 'root', 'root', 'loginapp');
-
-    if ($connection) {
-        echo 'You are connected!' . '<br>';
-    } else {
-        die('Something went wrong in connection!' . '<br>');
-    }
+    $queryRead = 'SELECT * from users';
+    $resultRead = mysqli_query($connection, $queryRead);
 }
-
-/* -------------------------------------------------------------------------- */
-/*                              READ Data from DB                             */
-/* -------------------------------------------------------------------------- */
-
-$queryRead = 'SELECT * from users';
-$resultRead = mysqli_query($connection, $queryRead);
 
 ?>
 
