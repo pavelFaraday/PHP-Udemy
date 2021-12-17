@@ -20,6 +20,13 @@
     $username = mysqli_real_escape_string($connection, $username);
     $password = mysqli_real_escape_string($connection, $password);
 
+    // Password Encryption
+    $hashFormat = "$2y$10$";
+    $salt = "asdfghjklqwertyuiopz22";
+    $hashFANDsalt = $hashFormat . $salt;
+    $password = crypt($password, $hashFANDsalt);
+
+
 
     /* -------------------------------------------------------------------------- */
     /*                             2. Save Data in DB                             */
