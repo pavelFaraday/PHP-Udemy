@@ -22,3 +22,5 @@ PHP Udemy Course - [PHP for Beginners - Become a PHP Master - CMS Project](https
 
 `in_array(needle, array)` - Returns true if needle is found in the array, false otherwise. [see example](https://www.php.net/manual/en/function.in-array.php).
 `needle` - The searched value.
+
+The `time()` function is a built-in function in PHP which returns the current time measured in the number of seconds since the Unix Epoch. The number of seconds can be converted to the current date using `date()` function in PHP.
