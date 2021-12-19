@@ -24,3 +24,7 @@ PHP Udemy Course - [PHP for Beginners - Become a PHP Master - CMS Project](https
 `needle` - The searched value.
 
 The `time()` function is a built-in function in PHP which returns the current time measured in the number of seconds since the Unix Epoch. The number of seconds can be converted to the current date using `date()` function in PHP.
+
+`class_exists("Car")` — Checks if the class has been defined
+
+`method_exists("Car", "turnONradio")` - Checks if the class has certain method
