@@ -1,0 +1,2 @@
+Now I am writing in .txt file. So, I love PHP!
+The red Fox jumped over the moon.
