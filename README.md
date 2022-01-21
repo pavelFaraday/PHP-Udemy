@@ -29,7 +29,15 @@ The `time()` function is a built-in function in PHP which returns the current ti
 
 `method_exists("Car", "turnONradio")` - Checks if the class has certain method
 
+---
+
 The `LIKE` operator is used in a `WHERE` clause to search for a specified pattern in a column.
 In examples below it finds in DB any values that have "$search" value in any position:
 
 `"SELECT * FROM posts WHERE post_tags LIKE '%$search%'"`
+
+---
+
+Show Limited Categories from DB:
+
+`$query = 'SELECT * from categories LIMIT 3';`
