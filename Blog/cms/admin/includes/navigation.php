@@ -49,7 +49,7 @@
                 </ul>
             </li>
             <li>
-                <a href="bootstrap-grid.html"><i class="fas fa-compass"></i> Categories</a>
+                <a href="../admin/categories.php"><i class="fas fa-compass"></i> Categories</a>
             </li>
 
             <li class="active">

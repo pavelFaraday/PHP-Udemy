@@ -30,3 +30,6 @@
 </head>
 
 <body>
+
+    <!-- db connection -->
+    <?php include_once '../includes/db.php'; ?>
