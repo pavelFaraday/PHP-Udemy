@@ -1,9 +1,9 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'includes/admin_header.php'; ?>
 
 <div id="wrapper">
 
     <!-- Navigation -->
-    <?php include 'includes/navigation.php'; ?>
+    <?php include 'includes/admin_navigation.php'; ?>
 
     <div id="page-wrapper">
 
@@ -18,6 +18,12 @@
                     </h1>
                     <!-- Left Side -->
                     <div class="col-xs-6">
+
+                        <?php
+                        $query_SelectCategoriesCMS = 'SELECT * from categories LIMIT 10';
+                        $result_SelectCategoriesCMS = mysqli_query($connection, $query_SelectCategoriesCMS);
+                        ?>
+
                         <form action="">
                             <div class="form-group">
                                 <label for="cat_title">Categories</label>
@@ -38,10 +44,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Baseball</td>
-                                    <td>Football</td>
-                                </tr>
+
+                                <?php
+                                while ($row = mysqli_fetch_assoc($result_SelectCategoriesCMS)) {
+                                    $cat_title = $row['cat_title'];
+                                    $cat_id = $row['cat_id'];
+                                    echo "<tr>
+                                            <td>{$cat_id}</td>
+                                            <td>{$cat_title}</td>
+                                          </tr>";
+                                }
+                                ?>
+
                             </tbody>
                         </table>
                     </div>
@@ -54,4 +68,4 @@
         </div>
         <!-- /#page-wrapper -->
 
-        <?php include 'includes/footer.php'; ?>
+        <?php include 'includes/admin_footer.php'; ?>
