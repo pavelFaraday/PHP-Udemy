@@ -18,13 +18,36 @@
                     </h1>
                     <!-- Left Side -->
                     <div class="col-xs-6">
-
                         <?php
-                        $query_SelectCategoriesCMS = 'SELECT * from categories LIMIT 10';
+
+                        // add Data in DB
+                        if (isset($_POST['submit'])) {
+                            $cat_title = $_POST['cat_title'];
+
+
+
+                            if ($cat_title == "" || empty($cat_title)) {
+                                echo "<h3 style='color:red;'>Please, fill required fild!</h3>";
+                            } else {
+                                $query = "INSERT INTO categories(cat_title) ";
+                                $query .=  "VALUE ('{$cat_title}') ";
+                                $result = mysqli_query($connection, $query);
+
+                                if (!$result) {
+                                    die('Query Failed!' . mysqli_error($connection));
+                                } else {
+                                    echo "Good";
+                                }
+                            }
+                        }
+
+                        // Insert DATA from DB
+                        $query_SelectCategoriesCMS = 'SELECT * from categories';
                         $result_SelectCategoriesCMS = mysqli_query($connection, $query_SelectCategoriesCMS);
+
                         ?>
 
-                        <form action="">
+                        <form action="" method="post">
                             <div class="form-group">
                                 <label for="cat_title">Categories</label>
                                 <input class="form-control" type="text" name="cat_title">
@@ -49,10 +72,10 @@
                                 while ($row = mysqli_fetch_assoc($result_SelectCategoriesCMS)) {
                                     $cat_title = $row['cat_title'];
                                     $cat_id = $row['cat_id'];
-                                    echo "<tr>
-                                            <td>{$cat_id}</td>
-                                            <td>{$cat_title}</td>
-                                          </tr>";
+                                    echo "<tr>";
+                                    echo "<td>{$cat_id}</td>";
+                                    echo "<td>{$cat_title}</td>";
+                                    echo "</tr>";
                                 }
                                 ?>
 
