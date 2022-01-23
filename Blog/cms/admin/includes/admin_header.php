@@ -1,3 +1,8 @@
+<?php ob_start(); ?>
+
+<!-- db connection -->
+<?php include_once '../includes/db.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +35,3 @@
 </head>
 
 <body>
-
-    <!-- db connection -->
-    <?php include_once '../includes/db.php'; ?>
