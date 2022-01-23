@@ -24,8 +24,6 @@
                         if (isset($_POST['submit'])) {
                             $cat_title = $_POST['cat_title'];
 
-
-
                             if ($cat_title == "" || empty($cat_title)) {
                                 echo "<h3 style='color:red;'>Please, fill required fild!</h3>";
                             } else {
@@ -75,8 +73,20 @@
                                     echo "<tr>";
                                     echo "<td>{$cat_id}</td>";
                                     echo "<td>{$cat_title}</td>";
+                                    echo "<td><a href='categories.php?delete={$cat_id}'>Delete</a></td>";
                                     echo "</tr>";
                                 }
+                                ?>
+
+                                <?php
+                                if (isset($_GET['delete'])) {
+                                    $the_cat_id = $_GET['delete'];
+
+                                    $queryDelete = "DELETE from categories WHERE cat_id = {$the_cat_id} ";
+                                    $resultDelete = mysqli_query($connection, $queryDelete);
+                                    header("Location: categories.php"); // redirect user into another page or redirect into same page (REFRESH page)
+                                }
+
                                 ?>
 
                             </tbody>
