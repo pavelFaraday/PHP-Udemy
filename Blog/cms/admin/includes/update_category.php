@@ -7,7 +7,7 @@
         if (isset($_GET['edit'])) {
             $cat_id = $_GET['edit'];
 
-            $query = "SELECT * from categories WHERE cat_id = $cat_id ";
+            $query = "SELECT * FROM categories WHERE cat_id = $cat_id ";
             $select_categories_id = mysqli_query($connection, $query);
 
             while ($row = mysqli_fetch_assoc($select_categories_id)) {
@@ -30,6 +30,7 @@
 
             $queryUpdate = "UPDATE categories SET cat_title = '{$the_cat_title}' WHERE cat_id = {$cat_id} ";
             $resultUpdate = mysqli_query($connection, $queryUpdate);
+            header("Location: categories.php"); // redirect into same page (REFRESH page)
         }
 
         ?>
