@@ -28,9 +28,6 @@
     </ul>
 
 
-
-
-
     <!-- Left Side Menu - Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
@@ -41,7 +38,7 @@
                 <a href="javascript:;" data-toggle="collapse" data-target="#posts_dropdown"><i class="fas fa-th-large"></i></i> Posts<i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="posts_dropdown" class="collapse">
                     <li>
-                        <a href="#"><i class="fab fa-battle-net"></i> View All Posts</a>
+                        <a href="../admin/posts.php"><i class="fab fa-battle-net"></i> View All Posts</a>
                     </li>
                     <li>
                         <a href="#"><i class="fas fa-plus"></i> Add Posts</a>
