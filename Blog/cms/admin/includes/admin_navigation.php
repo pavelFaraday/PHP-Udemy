@@ -41,7 +41,7 @@
                         <a href="../admin/posts.php"><i class="fab fa-battle-net"></i> View All Posts</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fas fa-plus"></i> Add Posts</a>
+                        <a href="posts.php?source=add_post"><i class="fas fa-plus"></i> Add Posts</a>
                     </li>
                 </ul>
             </li>
