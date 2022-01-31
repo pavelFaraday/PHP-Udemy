@@ -25,8 +25,8 @@
                         case 'add_post':
                             include "includes/add_post.php";
                             break;
-                        case 'value':
-                            # code...
+                        case 'edit_post':
+                            include "includes/edit_post.php";
                             break;
                         case 'value':
                             # code...
