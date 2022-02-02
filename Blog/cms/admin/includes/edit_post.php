@@ -64,6 +64,7 @@ if (isset($_POST['update_post'])) {
         <label for="title">Post Title</label>
         <input value="<?php echo $post_title; ?>" type="text" class="form-control" name="post_title">
     </div>
+
     <div class="form-group">
         <select name="post_category" id="post_category">
             <?php
@@ -80,9 +81,9 @@ if (isset($_POST['update_post'])) {
             }
             ?>
 
-
         </select>
     </div>
+
     <div class="form-group">
         <label for="post_author">Post Author</label>
         <input value="<?php echo $post_author; ?>" type="text" class="form-control" name="post_author">
