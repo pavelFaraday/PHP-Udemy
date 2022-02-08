@@ -49,7 +49,7 @@
             </li>
 
             <li class="active">
-                <a href="blank-page.html"><i class="fas fa-comment-alt"></i> Comments</a>
+                <a href="../admin/comments.php"><i class="fas fa-comment-alt"></i> Comments</a>
             </li>
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fas fa-users-cog"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
