@@ -48,7 +48,7 @@
                 <a href="../admin/categories.php"><i class="fas fa-compass"></i> Categories</a>
             </li>
 
-            <li class="active">
+            <li class="">
                 <a href="../admin/comments.php"><i class="fas fa-comment-alt"></i> Comments</a>
             </li>
             <li>
