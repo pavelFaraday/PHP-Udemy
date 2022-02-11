@@ -2,16 +2,12 @@
     <thead">
         <tr>
             <th>Id</th>
-            <th>Author</th>
-            <th>Comment</th>
+            <th>Username</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
             <th>Email</th>
-            <th>Status</th>
-            <th>In Response To</th>
+            <th>Role</th>
             <th>Date</th>
-            <th>Approve</th>
-            <th>Unapprove</th>
-            <th>Delete</th>
-
         </tr>
         </thead>
         <tbody>
@@ -58,7 +54,6 @@
                 }
 
                 echo "<td>{$comment_date}</td>";
-
                 echo "<td><a href='comments.php?approve=$comment_id'>Approve</a></td>";
                 echo "<td><a href='comments.php?unapprove=$comment_id'>Unapprove</a></td>";
                 echo "<td><a href='comments.php?delete=$comment_id'>Delete</a></td>";
