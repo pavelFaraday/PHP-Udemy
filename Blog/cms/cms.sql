@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Feb 08, 2022 at 07:17 AM
+-- Generation Time: Feb 16, 2022 at 10:56 AM
 -- Server version: 5.7.34
 -- PHP Version: 8.0.8
 
@@ -61,7 +61,8 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`comment_id`, `comment_post_id`, `comment_author`, `comment_email`, `comment_content`, `comment_status`, `comment_date`) VALUES
-(1, 10, 'John Doe', 'john@doe.com', 'Good content, respect from Germany.', 'approved', '2022-02-08');
+(1, 14, 'Ballllooo', 'cindy@mail.com', 'iuzuvz', 'approve', '2022-02-11'),
+(9, 14, 'Ballllooo', 'cindy@mail.com', 'kjbhv', 'unapprove', '2022-02-11');
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,7 @@ INSERT INTO `comments` (`comment_id`, `comment_post_id`, `comment_author`, `comm
 CREATE TABLE `posts` (
   `post_id` int(3) NOT NULL,
   `post_tags` varchar(255) NOT NULL,
-  `post_comment_count` int(11) NOT NULL,
+  `post_comment_count` int(11) DEFAULT NULL,
   `post_status` varchar(255) NOT NULL DEFAULT 'draft',
   `post_category_id` int(3) NOT NULL,
   `post_title` varchar(255) NOT NULL,
@@ -87,8 +88,32 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`post_id`, `post_tags`, `post_comment_count`, `post_status`, `post_category_id`, `post_title`, `post_author`, `post_date`, `post_image`, `post_content`) VALUES
-(4, 'javascript, tutorials', 4, 'approved', 163, 'GuKaaa', 'Ban Jovany', '2022-02-02', 'abstract-5035778.jpg', 'I had this fun idea for a volcano illustration and I thought it turned out pretty rad. Photos used for texture: flower (pansy), crowd, snowy mountain, ocean.'),
-(5, 'Python, Css', 4, 'approved', 160, 'Hello Python Language', 'John Kimmys', '2022-02-02', 'ganapathy-kumar-fjT3Zn2IhIk-unsplash.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim quis purus vitae suscipit. Integer ut eleifend metus. Ut ac cursus neque, in suscipit quam. Donec non volutpat libero. Aliquam egestas imperdiet pretium. Nunc vulputate sed metus ut feugiat. Cras nisi eros, elementum vitae rutrum tempus, iaculis eget lectus.\r\n\r\nSuspendisse accumsan vulputate mauris, at porttitor felis placerat nec. Duis tincidunt varius arcu. Maecenas lacinia, lacus quis commodo tincidunt, ante tellus scelerisque odio, eget blandit nunc sem nec metus. In convallis non nisl a pretium. Quisque scelerisque sollicitudin est vel commodo. Nunc non est purus. In hac habitasse platea dictumst. Maecenas purus nibh, bibendum et diam sed, gravida placerat ex. Sed dapibus risus ac purus euismod volutpat. Nam nec augue porta, euismod purus vel, finibus nunc.\r\n\r\nPellentesque venenatis, lorem et rutrum egestas, lorem urna tempus ligula, vel laoreet risus lacus vitae magna. Integer vitae arcu ut magna faucibus lacinia. Duis imperdiet elit ut lacus ornare, at facilisis felis ultricies. Aenean blandit pellentesque sapien in euismod. Donec efficitur nisl non metus feugiat, at pretium mauris ultricies. Aenean ullamcorper turpis non arcu tempor, ac tempus tortor elementum. Pellentesque sit amet aliquet quam. Integer imperdiet vehicula orci a tempus. Morbi porttitor imperdiet dapibus. Nullam et semper urna, eget lobortis neque. Phasellus vehicula ipsum eget dolor hendrerit malesuada vel quis tellus. Maecenas fringilla volutpat nunc ut facilisis. Vivamus nec est elit. Duis ac ex eu massa blandit porttitor vitae at ipsum. Proin facilisis nibh nec ante interdum facilisis.');
+(14, 'knkjbh', NULL, 'published', 160, 'Hello Python', 'Ban Jovany', '2022-02-10', '882771.jpg', 'ömbzv');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` int(3) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
+  `user_firstname` varchar(255) NOT NULL,
+  `user_lastname` varchar(255) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `user_image` text,
+  `user_role` varchar(255) NOT NULL,
+  `randSalt` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `user_password`, `user_firstname`, `user_lastname`, `user_email`, `user_image`, `user_role`, `randSalt`) VALUES
+(1, 'rico New', '123', 'Rico Me', 'Suave', 'ricosuave@gmaisl.com', '', 'admin', '');
 
 --
 -- Indexes for dumped tables
@@ -113,6 +138,12 @@ ALTER TABLE `posts`
   ADD PRIMARY KEY (`post_id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -126,13 +157,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `comment_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `post_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
