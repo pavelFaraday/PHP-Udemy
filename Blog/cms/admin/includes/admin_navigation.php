@@ -63,7 +63,7 @@
                 </ul>
             </li>
             <li>
-                <a href="index-rtl.html"><i class="fas fa-user-alt"></i> Profile</a>
+                <a href="profile.php"><i class="fas fa-user-alt"></i> Profile</a>
             </li>
         </ul>
     </div>
