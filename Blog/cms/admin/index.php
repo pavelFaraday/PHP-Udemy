@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="posts.php">
+                        <a href="../admin/posts.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="comments.php">
+                        <a href="../admin/comments.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -94,7 +94,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="users.php">
+                        <a href="../admin/users.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -121,7 +121,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="categories.php">
+                        <a href="../admin/categories.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
