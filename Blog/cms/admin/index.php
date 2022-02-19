@@ -146,11 +146,15 @@
                             ['Data', 'Count'],
 
                             <?php
+                            $element_text = ["Active Posts", "Comments", "Users", "Categories",];
+                            $element_count = [$post_count, $comment_counts, $user_counts, $category_counts];
 
+                            for ($i = 0; $i < 4; $i++) {
+                                echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
+                            }
 
                             ?>
 
-                            ['Posts', 1000],
                         ]);
 
                         var options = {
