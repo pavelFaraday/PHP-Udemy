@@ -1,19 +1,36 @@
-<table class="table table-bordered table-hover">
-    <thead">
-        <tr>
-            <th>Id</th>
-            <th>Author</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Status</th>
-            <th>Image</th>
-            <th>content</th>
-            <th>Tags</th>
-            <th>Comments</th>
-            <th>Date</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
+<form action="" method="post">
+
+    <table class="table table-bordered table-hover">
+
+        <div id="bulkOptionsContainer" class="col-xs-4">
+            <select class="form-control" name="" id="">
+                <option value="">Select Options</option>
+                <option value="">Publish</option>
+                <option value="">Draft</option>
+                <option value="">Delete</option>
+            </select>
+        </div>
+
+        <div class="col-xs-4">
+            <input type="submit" name="submit" value="Apply" class="btn btn-success">
+            <a href="add_post.php" class="btn btn-primary">Add New</a>
+        </div>
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Author</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Image</th>
+                <th>content</th>
+                <th>Tags</th>
+                <th>Comments</th>
+                <th>Date</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
         </thead>
         <tbody>
             <?php
@@ -61,7 +78,8 @@
 
             ?>
         </tbody>
-</table>
+    </table>
+</form>
 
 <?php
 
