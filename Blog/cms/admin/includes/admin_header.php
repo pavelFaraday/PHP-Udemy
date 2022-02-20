@@ -35,7 +35,6 @@ if (!isset($_SESSION['user_role'])) {
     <!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/summernote.css">
 
-
     <!-- Custom Fonts -->
     <script src="https://kit.fontawesome.com/6e5f89998b.js" crossorigin="anonymous"></script>
 
