@@ -1,8 +1,17 @@
+<?php
+if (isset($_POST['checkBoxArray'])) {
+    foreach ($_POST['checkBoxArray'] as $checkBoxValue) {
+        $bulk_options = $_POST['bulk_options'];
+    }
+}
+
+?>
+
 <form action="" method="post">
     <table class="table table-bordered table-hover">
 
         <div id="bulkOptionsContainer" class="col-xs-4">
-            <select class="form-control" name="" id="">
+            <select class="form-control" name="bulk_options">
                 <option value="">Select Options</option>
                 <option value="">Publish</option>
                 <option value="">Draft</option>
@@ -53,7 +62,7 @@
                 echo "<tr>";
             ?>
 
-                <td><input id='selectAllBoxes' type='checkbox' name='checkBoxArray[]' value="<?php echo '$post_id'; ?>"></td>
+                <td><input id='selectAllBoxes' type='checkbox' name='checkBoxArray[]' value="<?php echo $post_id; ?>"></td>
 
             <?php
                 echo "<td>{$post_id}</td>";
@@ -66,7 +75,6 @@
                 while ($row = mysqli_fetch_assoc($select_categories_id)) {
                     $cat_id = $row['cat_id'];
                     $cat_title = $row['cat_title'];
-
                     echo "<td>{$cat_title}</td>";
                 }
 
