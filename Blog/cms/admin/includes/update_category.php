@@ -17,7 +17,6 @@
                 <input value="<?php if (isset($cat_title)) {
                                     echo $cat_title;
                                 } ?>" class="form-control" type="text" name="cat_title">
-
         <?php
             }
         }
@@ -32,9 +31,7 @@
             $resultUpdate = mysqli_query($connection, $queryUpdate);
             header("Location: categories.php"); // redirect into same page (REFRESH page)
         }
-
         ?>
-
     </div>
     <div class="form-group">
         <input class="btn btn-primary" type="submit" name="update_category" value="Update Category">

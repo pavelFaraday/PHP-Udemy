@@ -3,20 +3,16 @@ if (isset($_POST['create_user'])) {
     $user_firstname = $_POST['user_firstname'];
     $user_lastname = $_POST['user_lastname'];
     $user_role = $_POST['user_role'];
-
     // $post_image = $_FILES['post_image']['name'];
     // $post_image_temp = $_FILES['post_image']['tmp_name'];
-
     $username = $_POST['username'];
     $user_email = $_POST['user_email'];
     $user_password = $_POST['user_password'];
     // $post_date = date('d-m-y');
-
     // Upload image from temporary location on the server (folder we specify)
     // move_uploaded_file($post_image_temp, "../images/$post_image");
 
     $query = "INSERT INTO users (user_firstname, user_lastname, user_role, username, user_email, user_password) ";
-
     $query .= "VALUES ('{$user_firstname}','{$user_lastname}','{$user_role}','{$username}','{$user_email}','{$user_password}') ";
 
     $create_user_query = mysqli_query($connection, $query);
@@ -60,7 +56,6 @@ if (isset($_POST['create_user'])) {
         <label for="post_content">Password</label>
         <input type="password" class="form-control" name="user_password">
     </div>
-
     <div class="form-group">
         <input class="btn btn-primary" type="submit" name="create_user" value="Add User">
     </div>

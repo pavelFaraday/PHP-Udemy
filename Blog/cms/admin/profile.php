@@ -53,7 +53,6 @@ if (isset($_POST['edit_user'])) {
 
 ?>
 
-
 <div id="wrapper">
     <!-- Navigation -->
     <?php include 'includes/admin_navigation.php'; ?>

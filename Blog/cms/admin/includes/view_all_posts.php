@@ -59,6 +59,7 @@ if (isset($_POST['checkBoxArray'])) {
                 <th>Delete</th>
             </tr>
         </thead>
+
         <tbody>
             <?php
             // Insert DATA from DB
@@ -79,9 +80,7 @@ if (isset($_POST['checkBoxArray'])) {
 
                 echo "<tr>";
             ?>
-
                 <td><input class='checkBoxes' type='checkbox' name='checkBoxArray[]' value="<?php echo $post_id; ?>"></td>
-
             <?php
                 echo "<td>{$post_id}</td>";
                 echo "<td>{$post_author}</td>";
