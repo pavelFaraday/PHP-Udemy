@@ -57,3 +57,7 @@ Session variables solve this problem by storing user information to be used acro
 So; Session variables hold information about one single user, and are available to all pages in one application.
 
 ---
+
+`mysqli_insert_id($connection)` — Returns the value generated for an AUTO_INCREMENT column by the last query
+
+---
