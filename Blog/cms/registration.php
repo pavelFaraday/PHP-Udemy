@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     $password = mysqli_real_escape_string($connection, $password);
 
     if (!empty($username) && !empty($email) && !empty($password)) {
-        $query = "SELECT randSalt FROM users ";
+        $query = "SELECT randSalt FROM users";
         $select_randSalt_query = mysqli_query($connection, $query);
 
         if (!$select_randSalt_query) {
@@ -21,6 +21,7 @@ if (isset($_POST['submit'])) {
 
         $row = mysqli_fetch_array($select_randSalt_query);
         $salt = $row['randSalt'];
+        $password = crypt($salt, $password);
 
         $query = "INSERT INTO users (username, user_email, user_password, user_role) ";
         $query .= "VALUES('{$username}', '{$email}', '{$password}', 'subscriber' )";
