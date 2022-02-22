@@ -18,8 +18,15 @@ if (isset($_POST['submit'])) {
         die(mysqli_error($connection));
     }
 
-    while ($row = mysqli_fetch_array($select_randSalt_query)) {
-        echo $salt = $row['randSalt'];
+    $row = mysqli_fetch_array($select_randSalt_query);
+    $salt = $row['randSalt'];
+
+    $query = "INSERT INTO users (username, user_email, user_password, user_role) ";
+    $query .= "VALUES('{$username}', '{$email}', '{$password}', 'subscriber' )";
+    $register_user_query = mysqli_query($connection, $query);
+
+    if (!$register_user_query) {
+        die(mysqli_error($connection));
     }
 }
 ?>
