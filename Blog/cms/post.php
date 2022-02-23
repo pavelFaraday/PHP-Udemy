@@ -13,7 +13,6 @@
         <div class="col-md-8">
 
             <?php
-
             if (isset($_GET['p_id'])) {
                 $the_post_id = $_GET['p_id'];
             }
@@ -27,7 +26,6 @@
                 $post_date = $row['post_date'];
                 $post_image = $row['post_image'];
                 $post_content = $row['post_content'];
-
             ?>
 
                 <h1 class="page-header">
@@ -52,7 +50,6 @@
             <?php } ?>
 
             <!-- Blog Comments -->
-
             <?php
             if (isset($_POST['create_comment'])) {
 
