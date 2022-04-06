@@ -5,7 +5,6 @@
 <!-- Navigation -->
 <?php include 'includes/navigation.php'; ?>
 
-
 <!-- Page Content -->
 <div class="container">
     <div class="row">
@@ -14,7 +13,15 @@
 
             <?php
 
-            $query_SelectPosts = 'SELECT * from posts';
+            $post_query_count = 'SELECT * FROM posts';
+            $find_qount = mysqli_query($connection, $post_query_count);
+            $count = mysqli_num_rows($find_qount);
+
+
+
+
+
+            $query_SelectPosts = 'SELECT * FROM posts';
             $result_SelectAllPosts = mysqli_query($connection, $query_SelectPosts);
 
             while ($row = mysqli_fetch_assoc($result_SelectAllPosts)) {
