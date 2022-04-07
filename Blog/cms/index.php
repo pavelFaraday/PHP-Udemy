@@ -13,16 +13,24 @@
 
             <?php
 
+            if (isset($_GET['page'])) {
+                $page = $_GET['page'];
+            } else {
+                $page = "";
+            }
+
+            if ($page == "" || $page == 1) {
+                $page_1 = 0;
+            } else {
+                $page_1 = ($page * 5) - 5;
+            }
+
             $post_query_count = 'SELECT * FROM posts';
             $find_qount = mysqli_query($connection, $post_query_count);
             $count = mysqli_num_rows($find_qount);
             $count = ceil($count / 5);
 
-
-
-
-
-            $query_SelectPosts = 'SELECT * FROM posts';
+            $query_SelectPosts = "SELECT * FROM posts LIMIT $page_1, 5 ";
             $result_SelectAllPosts = mysqli_query($connection, $query_SelectPosts);
 
             while ($row = mysqli_fetch_assoc($result_SelectAllPosts)) {
