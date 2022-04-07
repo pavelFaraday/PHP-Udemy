@@ -11,3 +11,7 @@ body {
 footer {
     margin: 50px 0;
 }
+
+.pager li .active_link {
+    background: rgb(206, 206, 206) !important;
+}
