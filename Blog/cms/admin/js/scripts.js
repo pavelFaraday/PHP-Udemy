@@ -15,7 +15,6 @@ $(document).ready(function() {
     }
   })
 
-
   let div_box = "<div id='load-screen'><div id='loading'></div></div>";
   $("body").prepend(div_box);
 
@@ -29,6 +28,11 @@ function loadUsersOnline() {
     $(".usersonline").text(data);
   });
 }
-loadUsersOnline();
+
+setInterval(function () { 
+  loadUsersOnline();
+}, 500);
+
+
 
 
