@@ -3,7 +3,6 @@
 function users_online()
 {
     global $connection;
-
     $session = session_id();
     $time = time();
     $time_out_in_seconds = 30;
