@@ -55,6 +55,8 @@ if (isset($_GET['edit_user'])) {
             confirmQuery($edit_user_query);
         }
     }
+} else {
+    header("Location: index.php");
 }
 
 ?>
@@ -82,10 +84,6 @@ if (isset($_GET['edit_user'])) {
 
         </select>
     </div>
-    <!-- <div class="form-group">
-        <label for="post_image">Post Image</label>
-        <input type="file" name="post_image">
-    </div> -->
     <div class="form-group">
         <label for="post_tags">Username</label>
         <input type="text" value="<?php echo $username; ?>" class="form-control" name="username">
@@ -97,7 +95,7 @@ if (isset($_GET['edit_user'])) {
 
     <div class="form-group">
         <label for="post_content">Password</label>
-        <input type="password" value="<?php echo $user_password; ?>" class="form-control" name="user_password">
+        <input type="password" autocomplete="off" class="form-control" name="user_password">
     </div>
 
     <div class="form-group">
