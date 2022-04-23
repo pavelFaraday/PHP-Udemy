@@ -1,35 +1,15 @@
+<!-- Another Stuff Must be done in ONLINE!!! -->
+<!-- https://www.udemy.com/course/php-for-complete-beginners-includes-msql-object-oriented/learn/lecture/3637202#overview -->
+
 <?php include "includes/db.php"; ?>
 <?php include "includes/header.php"; ?>
 
 <?php
 if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $username = mysqli_real_escape_string($connection, $username);
-    $email = mysqli_real_escape_string($connection, $email);
-    $password = mysqli_real_escape_string($connection, $password);
-    $password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 10));
-
-    if (!empty($username) && !empty($email) && !empty($password)) {
-
-        $query = "INSERT INTO users (username, user_email, user_password, user_role) ";
-        $query .= "VALUES('{$username}', '{$email}', '{$password}', 'subscriber' )";
-        $register_user_query = mysqli_query($connection, $query);
-
-        if (!$register_user_query) {
-            die(mysqli_error($connection));
-        }
-
-        $message = "You are Registered :)";
-    } else {
-        $message = "Fields Can not Be empty !";
-    }
-} else {
-    $message = "";
+    $to      = "epita123@gmail.com";
+    $subject = $_POST['subject'];
+    $body    = $_POST['body'];
 }
-
 ?>
 
 <!-- Navigation -->
@@ -44,14 +24,14 @@ if (isset($_POST['submit'])) {
                 <div class="col-xs-6 col-xs-offset-3">
                     <div class="form-wrap">
                         <h1>Contact</h1>
-                        <form role="form" action="registration.php" method="post" id="login-form" autocomplete="off">
+                        <form role="form" action="" method="post" id="login-form" autocomplete="off">
                             <div class="form-group">
                                 <label for="email" class="sr-only">Email</label>
                                 <input type="email" name="email" id="email" class="form-control" placeholder="Your Email">
                             </div>
                             <div class="form-group">
                                 <label for="subject" class="sr-only">Subject</label>
-                                <input type="email" name="subject" id="subject" class="form-control" placeholder="Subject">
+                                <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject">
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control" name="body" id="body" cols="20" rows="10" placeholder="Message"></textarea>
