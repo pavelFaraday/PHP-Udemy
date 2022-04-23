@@ -1,14 +1,25 @@
-<!-- Another Stuff Must be done in ONLINE!!! -->
-<!-- https://www.udemy.com/course/php-for-complete-beginners-includes-msql-object-oriented/learn/lecture/3637202#overview -->
-
 <?php include "includes/db.php"; ?>
 <?php include "includes/header.php"; ?>
 
 <?php
+
+/*
+// the message
+$msg = "Some Email Message";
+// use wordwrap() if lines are longer than 70 characters
+$msg = wordwrap($msg, 70);
+// send email
+mail("epita123@gmail.com", "My subject", $msg);
+*/
+
 if (isset($_POST['submit'])) {
-    $to      = "epita123@gmail.com";
-    $subject = $_POST['subject'];
+
+    $to      = "devstudio.corp@gmail.com";
+    $subject = wordwrap($_POST['subject'], 70);
     $body    = $_POST['body'];
+    $header  = $_POST['email'];
+
+    mail($to, $subject, $body, $header);
 }
 ?>
 
