@@ -1,5 +1,14 @@
 <?php
 
+function escape($string)
+{
+    global $connection;
+    // trim() — Strip whitespace (or other characters) from the beginning and end of a string
+    // strip_tags() — Strip HTML and PHP tags from a string
+    return mysqli_real_escape_string($connection, trim($string));
+}
+
+
 function users_online()
 {
     if (isset($_GET['onlineusers'])) {
