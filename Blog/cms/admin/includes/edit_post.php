@@ -120,7 +120,7 @@ if (isset($_POST['update_post'])) {
     </div>
     <div class="form-group">
         <label for="post_content">Post content</label>
-        <textarea class="form-control" name="post_content" id="summernote" cols="30" rows="10"><?php echo $post_content; ?></textarea>
+        <textarea class="form-control" name="post_content" id="summernote" cols="30" rows="10"><?php echo str_replace('\r\n', '</br>', $post_content); ?></textarea>
     </div>
     <div class="form-group">
         <input class="btn btn-primary" type="submit" name="update_post" value="Update Post">

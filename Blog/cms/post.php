@@ -29,7 +29,7 @@
                 if (mysqli_num_rows($select_all_posts_query) < 1) {
                     echo "<h1 class='text-center'>No Posts Available</h1>";
                 } else {
-                    while ($row = mysqli_fetch_assoc($result_SelectAllPosts)) {
+                    while ($row = mysqli_fetch_assoc($select_all_posts_query)) {
                         $post_title = $row['post_title'];
                         $post_author = $row['post_author'];
                         $post_date = $row['post_date'];
