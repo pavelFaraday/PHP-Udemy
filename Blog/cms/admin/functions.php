@@ -8,7 +8,6 @@ function escape($string)
     return mysqli_real_escape_string($connection, trim($string));
 }
 
-
 function users_online()
 {
     if (isset($_GET['onlineusers'])) {
@@ -105,4 +104,16 @@ function delete_category()
         $resultDelete = mysqli_query($connection, $queryDelete);
         header("Location: categories.php"); // redirect user into another page or redirect into same page (REFRESH page)
     }
+}
+
+function recordCount($table)
+{
+    global $connection;
+
+    $query = "SELECT * FROM " . $table;
+    $select_all = mysqli_query($connection, $query);
+    $result = mysqli_num_rows($select_all);
+    return $result;
+
+    confirmQuery($result);
 }
