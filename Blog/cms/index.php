@@ -48,8 +48,7 @@
             ?>
 
                     <h1 class="page-header">
-                        Page Heading
-                        <small>Secondary Text</small>
+                        Posts
                     </h1>
 
                     <!-- First Blog Post -->
