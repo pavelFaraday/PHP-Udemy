@@ -25,24 +25,26 @@
                 $page_1 = ($page * 5) - 5;
             }
 
-            $post_query_count = 'SELECT * FROM posts';
+            $post_query_count = 'SELECT * FROM posts WHERE post_status = "published"';
             $find_qount = mysqli_query($connection, $post_query_count);
             $count = mysqli_num_rows($find_qount);
-            $count = ceil($count / 5);
 
-            $query_SelectPosts = "SELECT * FROM posts LIMIT $page_1, 5 ";
-            $result_SelectAllPosts = mysqli_query($connection, $query_SelectPosts);
+            if ($count < 1) {
+                echo "<h1 class='text-center'>No Posts Available</h1>";
+            } else {
+                $count = ceil($count / 5);
 
-            while ($row = mysqli_fetch_assoc($result_SelectAllPosts)) {
-                $post_id = $row['post_id'];
-                $post_title = $row['post_title'];
-                $post_author = $row['post_author'];
-                $post_date = $row['post_date'];
-                $post_image = $row['post_image'];
-                $post_content = substr($row['post_content'], 0, 150);
-                $post_status = $row['post_status'];
+                $query_SelectPosts = "SELECT * FROM posts LIMIT $page_1, 5 ";
+                $result_SelectAllPosts = mysqli_query($connection, $query_SelectPosts);
 
-                if ($post_status == 'published') {
+                while ($row = mysqli_fetch_assoc($result_SelectAllPosts)) {
+                    $post_id = $row['post_id'];
+                    $post_title = $row['post_title'];
+                    $post_author = $row['post_author'];
+                    $post_date = $row['post_date'];
+                    $post_image = $row['post_image'];
+                    $post_content = substr($row['post_content'], 0, 150);
+                    $post_status = $row['post_status'];
             ?>
 
                     <h1 class="page-header">
