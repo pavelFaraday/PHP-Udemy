@@ -15,7 +15,12 @@
             if (isset($_GET['category'])) {
                 $post_category_id = $_GET['category'];
 
-                $query_SelectPosts = "SELECT * from posts WHERE post_category_id = $post_category_id AND post_status='published' ";
+                if (isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin') {
+                    $query_SelectPosts = "SELECT * from posts WHERE post_category_id = $post_category_id ";
+                } else {
+                    $query_SelectPosts = "SELECT * from posts WHERE post_category_id = $post_category_id AND post_status='published' ";
+                }
+
                 $result_SelectAllPosts = mysqli_query($connection, $query_SelectPosts);
 
                 if (mysqli_num_rows($result_SelectAllPosts) < 1) {
@@ -31,8 +36,7 @@
                         $post_content = substr($row['post_content'], 0, 150);
             ?>
                         <h1 class="page-header">
-                            Page Heading
-                            <small>Secondary Text</small>
+                            Posts
                         </h1>
 
                         <!-- First Blog Post -->
