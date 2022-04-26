@@ -1,11 +1,16 @@
 <?php include "includes/db.php"; ?>
 <?php include "includes/header.php"; ?>
+<?php include "admin/functions.php"; ?>
 
 <?php
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+
+    if (username_exists($username)) {
+        $message = "user exists";
+    }
 
     $username = mysqli_real_escape_string($connection, $username);
     $email = mysqli_real_escape_string($connection, $email);
@@ -22,7 +27,7 @@ if (isset($_POST['submit'])) {
             die(mysqli_error($connection));
         }
 
-        $message = "You are Registered :)";
+        // $message = "You are Registered :)";
     } else {
         $message = "Fields Can not Be empty !";
     }
