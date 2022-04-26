@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <?php session_start();
 
 $_SESSION['username'] = null;
