@@ -2,6 +2,26 @@
 <?php include "includes/header.php"; ?>
 <?php include "admin/functions.php"; ?>
 
+
+<!-- Setting language Variables -->
+<?php
+if (isset($_GET['lang'])) {
+    $_SESSION['lang'] = $_GET['lang'];
+
+    if (isset($_SESSION['lang']) &&  $_SESSION['lang'] == $_GET['lang']) {
+        echo "<script type='text/javascript'>location.reload();</script>";
+    }
+
+    if (isset($_SESSION['lang'])) {
+        include "includes/languages/" . $_SESSION['lang'] . ".php";
+    } else {
+        include "includes/languages/en.php";
+    }
+}
+
+
+?>
+
 <?php
 if (($_SERVER['REQUEST_METHOD'] == "POST")) {
     $username = trim($_POST['username']);
